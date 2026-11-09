@@ -445,3 +445,9 @@ aside ul {
         text-align: center;
     }
 }
+
+/* Etapa 3 */
+.contador {
+    margin-top: -10px;
+    color: var(--cinza);
+}

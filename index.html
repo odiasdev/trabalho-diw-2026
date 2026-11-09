@@ -69,65 +69,14 @@
         <section>
             <h2>Meus filmes</h2>
 
-            <p class="sucesso">Filme excluído com sucesso.</p>
+            <p id="contador" class="contador"></p>
 
-            <!-- Dados de exemplo, serão gerados com JavaScript depois -->
-            <div class="lista">
-                <article class="card">
-                    <img src="assets/img/interestelar.jpg" alt="Pôster de Interestelar">
-                    <h3>Interestelar</h3>
-                    <p>Christopher Nolan, 2014</p>
-                    <p>Ficção científica · Assistido</p>
-                    <p><strong>Nota: 9,5</strong></p>
-                    <div class="acoes">
-                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
-                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
-                        <button type="button" class="excluir">Excluir</button>
-                    </div>
-                </article>
+            <p id="mensagem" class="sucesso" role="status" hidden></p>
 
-                <article class="card">
-                    <img src="assets/img/cidade-de-deus.jpg" alt="Pôster de Cidade de Deus">
-                    <h3>Cidade de Deus</h3>
-                    <p>Fernando Meirelles, 2002</p>
-                    <p>Drama · Assistido</p>
-                    <p><strong>Nota: 9,0</strong></p>
-                    <div class="acoes">
-                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
-                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
-                        <button type="button" class="excluir">Excluir</button>
-                    </div>
-                </article>
+            <!-- Os cards são criados pelo lista.js -->
+            <div id="lista-filmes" class="lista"></div>
 
-                <article class="card">
-                    <img src="assets/img/toy-story.jpg" alt="Pôster de Toy Story">
-                    <h3>Toy Story</h3>
-                    <p>John Lasseter, 1995</p>
-                    <p>Animação · Assistido</p>
-                    <p><strong>Nota: 8,5</strong></p>
-                    <div class="acoes">
-                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
-                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
-                        <button type="button" class="excluir">Excluir</button>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="assets/img/o-iluminado.jpg" alt="Pôster de O Iluminado">
-                    <h3>O Iluminado</h3>
-                    <p>Stanley Kubrick, 1980</p>
-                    <p>Terror · Quero ver</p>
-                    <p><strong>Nota: -</strong></p>
-                    <div class="acoes">
-                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
-                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
-                        <button type="button" class="excluir">Excluir</button>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Mostrado quando a pesquisa não encontrar nada (Etapa 3) -->
-            <p class="vazio" hidden>Nenhum filme encontrado.</p>
+            <p id="vazio" class="vazio" hidden></p>
         </section>
     </main>
 
@@ -136,5 +85,6 @@
     </footer>
 
     <script src="assets/js/dados.js"></script>
+    <script src="assets/js/lista.js"></script>
 </body>
 </html>

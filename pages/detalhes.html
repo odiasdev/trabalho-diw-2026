@@ -21,40 +21,38 @@
         </ul>
     </nav>
 
-    <main class="detalhes">
+    <!-- Os dados são preenchidos pelo detalhes.js -->
+    <main class="detalhes" id="detalhes">
         <article class="filme">
-            <h2>Interestelar</h2>
+            <h2 id="titulo"></h2>
 
             <figure>
-                <img src="../assets/img/interestelar.jpg" alt="Pôster do filme Interestelar">
+                <img id="poster" src="../assets/img/sem-poster.svg" alt="">
                 <figcaption>Pôster do filme</figcaption>
             </figure>
 
             <dl>
                 <dt>Diretor</dt>
-                <dd>Christopher Nolan</dd>
+                <dd id="diretor"></dd>
                 <dt>Gênero</dt>
-                <dd>Ficção científica</dd>
+                <dd id="genero"></dd>
                 <dt>Ano</dt>
-                <dd>2014</dd>
+                <dd id="ano"></dd>
                 <dt>Duração</dt>
-                <dd>169 minutos</dd>
+                <dd id="duracao"></dd>
                 <dt>Status</dt>
-                <dd>Assistido em <time datetime="2025-03-15">15/03/2025</time></dd>
+                <dd id="status"></dd>
                 <dt>Nota</dt>
-                <dd>9,5</dd>
+                <dd id="nota"></dd>
             </dl>
 
             <div class="sinopse">
                 <h3>Sinopse</h3>
-                <p>
-                    Um grupo de astronautas viaja através de um buraco de minhoca
-                    em busca de um novo lar para a humanidade.
-                </p>
+                <p id="sinopse"></p>
 
                 <div class="botoes">
-                    <a href="cadastro.html" class="botao secundario">Editar</a>
-                    <button type="button" class="excluir">Excluir</button>
+                    <a href="cadastro.html" id="link-editar" class="botao secundario">Editar</a>
+                    <button type="button" id="botao-excluir" class="excluir">Excluir</button>
                     <a href="../index.html" class="botao secundario">Voltar para a lista</a>
                 </div>
             </div>
@@ -62,10 +60,7 @@
 
         <aside>
             <h3>Outros filmes do mesmo gênero</h3>
-            <ul>
-                <li><a href="detalhes.html">A Chegada</a></li>
-                <li><a href="detalhes.html">Matrix</a></li>
-            </ul>
+            <ul id="relacionados"></ul>
         </aside>
     </main>
 
@@ -74,5 +69,6 @@
     </footer>
 
     <script src="../assets/js/dados.js"></script>
+    <script src="../assets/js/detalhes.js"></script>
 </body>
 </html>

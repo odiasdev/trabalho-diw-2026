@@ -5,6 +5,9 @@ const contador = document.querySelector("#contador");
 const vazio = document.querySelector("#vazio");
 const mensagem = document.querySelector("#mensagem");
 
+const formPesquisa = document.querySelector("#form-pesquisa");
+const campoPesquisa = document.querySelector("#pesquisa");
+
 function mostrarMensagem(texto) {
     mensagem.textContent = texto;
     mensagem.hidden = false;
@@ -46,23 +49,52 @@ function confirmarExclusao(filme) {
     }
 }
 
+function filtrarFilmes(filmes) {
+    const texto = campoPesquisa.value.trim().toLowerCase();
+    const resultado = [];
+
+    for (const filme of filmes) {
+        const achouTexto =
+            filme.titulo.toLowerCase().includes(texto) ||
+            filme.diretor.toLowerCase().includes(texto);
+
+        if (achouTexto) {
+            resultado.push(filme);
+        }
+    }
+
+    return resultado;
+}
+
 function mostrarFilmes() {
-    const filmes = carregarFilmes();
+    const todos = carregarFilmes();
+    const filmes = filtrarFilmes(todos);
 
     lista.innerHTML = "";
     for (const filme of filmes) {
         lista.appendChild(criarCard(filme));
     }
 
-    contador.textContent = filmes.length + " filme(s) cadastrado(s)";
+    contador.textContent = "Mostrando " + filmes.length + " de " + todos.length + " filme(s)";
 
-    if (filmes.length === 0) {
+    if (todos.length === 0) {
         vazio.textContent = "Você ainda não cadastrou nenhum filme.";
+        vazio.hidden = false;
+    } else if (filmes.length === 0) {
+        vazio.textContent = "Nenhum filme encontrado. Tente mudar a pesquisa.";
         vazio.hidden = false;
     } else {
         vazio.hidden = true;
     }
 }
+
+// A lista atualiza enquanto o usuário digita
+campoPesquisa.addEventListener("input", mostrarFilmes);
+
+formPesquisa.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    mostrarFilmes();
+});
 
 // Outras páginas voltam pra cá com um aviso no endereço (ex.: index.html?msg=cadastrado)
 const avisos = {

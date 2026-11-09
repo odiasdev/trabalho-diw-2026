@@ -356,3 +356,84 @@ aside ul {
     border: 1px solid #e0c96b;
     border-radius: 4px;
 }
+
+/* Tablets */
+@media (max-width: 900px) {
+    .lista {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pesquisa {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .detalhes {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header p {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    section {
+        padding: 14px;
+    }
+
+    .pesquisa,
+    .formulario fieldset {
+        grid-template-columns: 1fr;
+    }
+
+    .inteiro {
+        grid-column: auto;
+    }
+
+    .lista {
+        grid-template-columns: 1fr;
+    }
+
+    .card img {
+        height: auto;
+    }
+
+    .filme {
+        grid-template-columns: 1fr;
+    }
+
+    .filme h2,
+    .sinopse {
+        grid-column: auto;
+    }
+
+    figure img {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botoes .botao,
+    .botoes button {
+        text-align: center;
+    }
+}

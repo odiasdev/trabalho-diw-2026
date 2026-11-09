@@ -31,7 +31,19 @@ function criarCard(filme) {
         </div>
     `;
 
+    card.querySelector(".excluir").addEventListener("click", function () {
+        confirmarExclusao(filme);
+    });
+
     return card;
+}
+
+function confirmarExclusao(filme) {
+    if (confirm('Deseja excluir "' + filme.titulo + '"?')) {
+        excluirFilme(filme.id);
+        mostrarFilmes();
+        mostrarMensagem('"' + filme.titulo + '" foi excluído.');
+    }
 }
 
 function mostrarFilmes() {
@@ -55,7 +67,8 @@ function mostrarFilmes() {
 // Outras páginas voltam pra cá com um aviso no endereço (ex.: index.html?msg=cadastrado)
 const avisos = {
     cadastrado: "Filme cadastrado com sucesso!",
-    editado: "Alterações salvas com sucesso!"
+    editado: "Alterações salvas com sucesso!",
+    excluido: "Filme excluído com sucesso."
 };
 const codigoAviso = new URLSearchParams(window.location.search).get("msg");
 if (avisos[codigoAviso]) {

@@ -56,6 +56,13 @@ function mostrarRelacionados() {
 if (filme) {
     mostrarDetalhes();
     mostrarRelacionados();
+
+    document.querySelector("#botao-excluir").addEventListener("click", function () {
+        if (confirm('Deseja excluir "' + filme.titulo + '"?')) {
+            excluirFilme(filme.id);
+            window.location.href = "../index.html?msg=excluido";
+        }
+    });
 } else {
     // id inválido ou filme já excluído
     document.querySelector("#detalhes").innerHTML = `

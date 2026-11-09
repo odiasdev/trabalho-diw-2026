@@ -54,3 +54,52 @@ footer {
     background-color: #1e1e1e;
     color: #bbb;
 }
+
+section {
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+fieldset {
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input[type="radio"] + label {
+    display: inline;
+    margin-right: 12px;
+}
+
+input,
+select,
+textarea {
+    padding: 6px;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+}
+
+button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #c0392b;
+    color: #fff;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background-color: #777;
+}

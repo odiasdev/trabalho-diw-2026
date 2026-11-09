@@ -7,6 +7,8 @@ const mensagem = document.querySelector("#mensagem");
 
 const formPesquisa = document.querySelector("#form-pesquisa");
 const campoPesquisa = document.querySelector("#pesquisa");
+const filtroGenero = document.querySelector("#filtro-genero");
+const filtroStatus = document.querySelector("#filtro-status");
 
 function mostrarMensagem(texto) {
     mensagem.textContent = texto;
@@ -51,6 +53,8 @@ function confirmarExclusao(filme) {
 
 function filtrarFilmes(filmes) {
     const texto = campoPesquisa.value.trim().toLowerCase();
+    const genero = filtroGenero.value;
+    const status = filtroStatus.value;
     const resultado = [];
 
     for (const filme of filmes) {
@@ -58,7 +62,11 @@ function filtrarFilmes(filmes) {
             filme.titulo.toLowerCase().includes(texto) ||
             filme.diretor.toLowerCase().includes(texto);
 
-        if (achouTexto) {
+        // Valor "" significa "Todos"
+        const achouGenero = genero === "" || filme.genero === genero;
+        const achouStatus = status === "" || filme.status === status;
+
+        if (achouTexto && achouGenero && achouStatus) {
             resultado.push(filme);
         }
     }
@@ -81,7 +89,7 @@ function mostrarFilmes() {
         vazio.textContent = "Você ainda não cadastrou nenhum filme.";
         vazio.hidden = false;
     } else if (filmes.length === 0) {
-        vazio.textContent = "Nenhum filme encontrado. Tente mudar a pesquisa.";
+        vazio.textContent = "Nenhum filme encontrado. Tente mudar a pesquisa ou os filtros.";
         vazio.hidden = false;
     } else {
         vazio.hidden = true;
@@ -90,6 +98,8 @@ function mostrarFilmes() {
 
 // A lista atualiza enquanto o usuário digita
 campoPesquisa.addEventListener("input", mostrarFilmes);
+filtroGenero.addEventListener("change", mostrarFilmes);
+filtroStatus.addEventListener("change", mostrarFilmes);
 
 formPesquisa.addEventListener("submit", function (evento) {
     evento.preventDefault();

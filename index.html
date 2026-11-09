@@ -69,75 +69,65 @@
         <section>
             <h2>Meus filmes</h2>
 
+            <p class="sucesso">Filme excluído com sucesso.</p>
+
             <!-- Dados de exemplo, serão gerados com JavaScript depois -->
-            <table>
-                <caption>Filmes cadastrados</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Título</th>
-                        <th scope="col">Diretor</th>
-                        <th scope="col">Gênero</th>
-                        <th scope="col">Ano</th>
-                        <th scope="col">Nota</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Interestelar</td>
-                        <td>Christopher Nolan</td>
-                        <td>Ficção científica</td>
-                        <td>2014</td>
-                        <td>9,5</td>
-                        <td>Assistido</td>
-                        <td>
-                            <a href="pages/detalhes.html">Ver detalhes</a>
-                            <a href="pages/cadastro.html">Editar</a>
-                            <button type="button">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cidade de Deus</td>
-                        <td>Fernando Meirelles</td>
-                        <td>Drama</td>
-                        <td>2002</td>
-                        <td>9,0</td>
-                        <td>Assistido</td>
-                        <td>
-                            <a href="pages/detalhes.html">Ver detalhes</a>
-                            <a href="pages/cadastro.html">Editar</a>
-                            <button type="button">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Toy Story</td>
-                        <td>John Lasseter</td>
-                        <td>Animação</td>
-                        <td>1995</td>
-                        <td>8,5</td>
-                        <td>Assistido</td>
-                        <td>
-                            <a href="pages/detalhes.html">Ver detalhes</a>
-                            <a href="pages/cadastro.html">Editar</a>
-                            <button type="button">Excluir</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>O Iluminado</td>
-                        <td>Stanley Kubrick</td>
-                        <td>Terror</td>
-                        <td>1980</td>
-                        <td>-</td>
-                        <td>Quero ver</td>
-                        <td>
-                            <a href="pages/detalhes.html">Ver detalhes</a>
-                            <a href="pages/cadastro.html">Editar</a>
-                            <button type="button">Excluir</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="lista">
+                <article class="card">
+                    <img src="assets/img/interestelar.jpg" alt="Pôster de Interestelar">
+                    <h3>Interestelar</h3>
+                    <p>Christopher Nolan, 2014</p>
+                    <p>Ficção científica · Assistido</p>
+                    <p><strong>Nota: 9,5</strong></p>
+                    <div class="acoes">
+                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
+                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
+                        <button type="button" class="excluir">Excluir</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="assets/img/cidade-de-deus.jpg" alt="Pôster de Cidade de Deus">
+                    <h3>Cidade de Deus</h3>
+                    <p>Fernando Meirelles, 2002</p>
+                    <p>Drama · Assistido</p>
+                    <p><strong>Nota: 9,0</strong></p>
+                    <div class="acoes">
+                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
+                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
+                        <button type="button" class="excluir">Excluir</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="assets/img/toy-story.jpg" alt="Pôster de Toy Story">
+                    <h3>Toy Story</h3>
+                    <p>John Lasseter, 1995</p>
+                    <p>Animação · Assistido</p>
+                    <p><strong>Nota: 8,5</strong></p>
+                    <div class="acoes">
+                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
+                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
+                        <button type="button" class="excluir">Excluir</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="assets/img/o-iluminado.jpg" alt="Pôster de O Iluminado">
+                    <h3>O Iluminado</h3>
+                    <p>Stanley Kubrick, 1980</p>
+                    <p>Terror · Quero ver</p>
+                    <p><strong>Nota: -</strong></p>
+                    <div class="acoes">
+                        <a href="pages/detalhes.html" class="botao">Detalhes</a>
+                        <a href="pages/cadastro.html" class="botao secundario">Editar</a>
+                        <button type="button" class="excluir">Excluir</button>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Mostrado quando a pesquisa não encontrar nada (Etapa 3) -->
+            <p class="vazio" hidden>Nenhum filme encontrado.</p>
         </section>
     </main>
 

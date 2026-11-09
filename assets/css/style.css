@@ -138,3 +138,34 @@ td a {
         overflow-x: auto;
     }
 }
+
+.detalhes {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 16px;
+}
+
+article,
+aside {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+figure {
+    margin: 0 0 16px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 0 8px;
+}
+
+@media (max-width: 700px) {
+    .detalhes {
+        grid-template-columns: 1fr;
+    }
+}

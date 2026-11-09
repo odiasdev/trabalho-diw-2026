@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+    <rect width="200" height="300" fill="#0b1a2e"/>
+    <circle cx="100" cy="120" r="50" fill="#e8a33d"/>
+    <circle cx="100" cy="120" r="34" fill="#0b1a2e"/>
+    <text x="100" y="250" fill="#ffffff" font-family="Arial" font-size="18" text-anchor="middle">INTERESTELAR</text>
+</svg>

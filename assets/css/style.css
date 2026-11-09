@@ -251,18 +251,24 @@ textarea:focus {
     color: var(--cinza);
 }
 
+/* "Detalhes" em cima, "Editar" e "Excluir" embaixo */
 .acoes {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 6px;
     margin-top: auto;
     padding-top: 10px;
+}
+
+.acoes .botao:first-child {
+    grid-column: 1 / 3;
 }
 
 .acoes .botao,
 .acoes button {
     padding: 6px 10px;
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .excluir {
@@ -410,7 +416,9 @@ aside ul {
     }
 
     .card img {
+        width: 200px;
         height: auto;
+        margin: 0 auto;
     }
 
     .filme {

@@ -209,6 +209,14 @@ textarea:focus {
     gap: 10px;
 }
 
+/* Pesquisa, filtros e ordenação lado a lado */
+.pesquisa {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+}
+
 .aviso {
     padding: 10px;
     background-color: #fff8dc;

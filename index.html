@@ -25,34 +25,42 @@
         <section>
             <h2>Pesquisar filmes</h2>
 
-            <form action="#" role="search">
-                <label for="pesquisa">Buscar por título ou diretor</label>
-                <input type="search" id="pesquisa" name="pesquisa" placeholder="Ex.: Interestelar">
+            <form action="#" role="search" class="pesquisa">
+                <div class="campo">
+                    <label for="pesquisa">Buscar por título ou diretor</label>
+                    <input type="search" id="pesquisa" name="pesquisa" placeholder="Ex.: Interestelar">
+                </div>
 
-                <label for="filtro-genero">Gênero</label>
-                <select id="filtro-genero" name="filtro-genero">
-                    <option value="">Todos</option>
-                    <option value="acao">Ação</option>
-                    <option value="animacao">Animação</option>
-                    <option value="comedia">Comédia</option>
-                    <option value="drama">Drama</option>
-                    <option value="ficcao">Ficção científica</option>
-                    <option value="terror">Terror</option>
-                </select>
+                <div class="campo">
+                    <label for="filtro-genero">Gênero</label>
+                    <select id="filtro-genero" name="filtro-genero">
+                        <option value="">Todos</option>
+                        <option value="acao">Ação</option>
+                        <option value="animacao">Animação</option>
+                        <option value="comedia">Comédia</option>
+                        <option value="drama">Drama</option>
+                        <option value="ficcao">Ficção científica</option>
+                        <option value="terror">Terror</option>
+                    </select>
+                </div>
 
-                <label for="filtro-status">Status</label>
-                <select id="filtro-status" name="filtro-status">
-                    <option value="">Todos</option>
-                    <option value="assistido">Assistido</option>
-                    <option value="quero-ver">Quero ver</option>
-                </select>
+                <div class="campo">
+                    <label for="filtro-status">Status</label>
+                    <select id="filtro-status" name="filtro-status">
+                        <option value="">Todos</option>
+                        <option value="assistido">Assistido</option>
+                        <option value="quero-ver">Quero ver</option>
+                    </select>
+                </div>
 
-                <label for="ordenar">Ordenar por</label>
-                <select id="ordenar" name="ordenar">
-                    <option value="titulo">Título (A-Z)</option>
-                    <option value="ano">Ano de lançamento</option>
-                    <option value="nota">Maior nota</option>
-                </select>
+                <div class="campo">
+                    <label for="ordenar">Ordenar por</label>
+                    <select id="ordenar" name="ordenar">
+                        <option value="titulo">Título (A-Z)</option>
+                        <option value="ano">Ano de lançamento</option>
+                        <option value="nota">Maior nota</option>
+                    </select>
+                </div>
 
                 <button type="submit">Pesquisar</button>
             </form>

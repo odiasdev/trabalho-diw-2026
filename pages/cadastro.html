@@ -22,6 +22,25 @@
     </nav>
 
     <main>
+        <section>
+            <h2>Buscar filme do Studio Ghibli</h2>
+            <p>
+                Pesquise um filme na <a href="https://ghibliapi.vercel.app" target="_blank">Studio Ghibli API</a>
+                e use os dados dele para preencher o formulário.
+            </p>
+
+            <form id="form-api" action="#" role="search">
+                <label for="busca-api">Nome do filme (em inglês)</label>
+                <div class="linha-busca">
+                    <input type="search" id="busca-api" name="busca-api" placeholder="Ex.: Totoro (deixe vazio para ver todos)">
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
+
+            <p id="status-api" class="status-api" role="status"></p>
+            <ul id="resultados-api" class="resultados-api"></ul>
+        </section>
+
         <!-- Este mesmo formulário será usado para cadastro e edição -->
         <section>
             <h2 id="titulo-pagina">Cadastrar filme</h2>
@@ -114,5 +133,6 @@
 
     <script src="../assets/js/dados.js"></script>
     <script src="../assets/js/cadastro.js"></script>
+    <script src="../assets/js/api.js"></script>
 </body>
 </html>

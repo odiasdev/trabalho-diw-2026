@@ -12,6 +12,16 @@ implementadas em JavaScript e os dados são fictícios.
 - **Detalhes (`pages/detalhes.html`)**: informações completas de um filme
 - **Sobre (`pages/sobre.html`)**: descrição do sistema
 
+## Etapa 2 - CSS, Layout e Responsividade
+
+- Cores e fonte definidas em variáveis no `style.css`
+- Cabeçalho, menu e botões organizados com Flexbox
+- Formulário, pesquisa, listagem em cards e detalhes organizados com Grid
+- Estados de hover e foco nos links, botões e campos
+- Responsividade com dois breakpoints: 900px (tablet) e 600px (celular)
+
+Os pôsteres dos filmes foram retirados da Wikipedia.
+
 ## Estrutura
 
 ```

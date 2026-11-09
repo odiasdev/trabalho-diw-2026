@@ -3,6 +3,33 @@
 const form = document.querySelector("#form-filme");
 const feedback = document.querySelector("#feedback");
 
+// Se o endereço tiver ?id=..., a página funciona como edição
+const filmeEditado = buscarFilmePorId(idDaUrl());
+
+function preencherFormulario(filme) {
+    form.titulo.value = filme.titulo;
+    form.diretor.value = filme.diretor;
+    form.genero.value = filme.genero;
+    form.ano.value = filme.ano;
+    form.duracao.value = filme.duracao || "";
+    form.status.value = filme.status;
+    form.nota.value = filme.nota === null ? "" : filme.nota;
+    form["data-assistido"].value = filme.dataAssistido;
+    form.sinopse.value = filme.sinopse;
+
+    // Pôsteres da pasta img não são URL, então só mostra os da internet
+    if (filme.poster.startsWith("http")) {
+        form.poster.value = filme.poster;
+    }
+}
+
+if (filmeEditado) {
+    document.title = "Editar Filme - CineLista";
+    document.querySelector("#titulo-pagina").textContent = "Editar filme";
+    document.querySelector("#botao-salvar").textContent = "Salvar alterações";
+    preencherFormulario(filmeEditado);
+}
+
 function lerFormulario() {
     const filme = {
         titulo: form.titulo.value.trim(),
@@ -98,8 +125,20 @@ form.addEventListener("submit", function (evento) {
         return;
     }
 
-    adicionarFilme(filme);
-    window.location.href = "../index.html?msg=cadastrado";
+    if (filmeEditado) {
+        filme.id = filmeEditado.id;
+
+        // Campo do pôster vazio = mantém o pôster que já tinha
+        if (filme.poster === "") {
+            filme.poster = filmeEditado.poster;
+        }
+
+        atualizarFilme(filme);
+        window.location.href = "../index.html?msg=editado";
+    } else {
+        adicionarFilme(filme);
+        window.location.href = "../index.html?msg=cadastrado";
+    }
 });
 
 form.addEventListener("reset", limparErros);

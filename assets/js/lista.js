@@ -54,7 +54,8 @@ function mostrarFilmes() {
 
 // Outras páginas voltam pra cá com um aviso no endereço (ex.: index.html?msg=cadastrado)
 const avisos = {
-    cadastrado: "Filme cadastrado com sucesso!"
+    cadastrado: "Filme cadastrado com sucesso!",
+    editado: "Alterações salvas com sucesso!"
 };
 const codigoAviso = new URLSearchParams(window.location.search).get("msg");
 if (avisos[codigoAviso]) {

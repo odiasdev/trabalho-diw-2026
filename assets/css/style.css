@@ -451,3 +451,21 @@ aside ul {
     margin-top: -10px;
     color: var(--cinza);
 }
+
+.alerta-erro {
+    padding: 10px;
+    color: #7a1f17;
+    background-color: #fdecea;
+    border: 1px solid #e6a49c;
+    border-radius: 4px;
+}
+
+.invalido {
+    border-color: var(--vermelho);
+    background-color: #fdf0ef;
+}
+
+.erro {
+    font-size: 0.85rem;
+    color: var(--vermelho);
+}

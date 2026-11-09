@@ -3,6 +3,16 @@
 const lista = document.querySelector("#lista-filmes");
 const contador = document.querySelector("#contador");
 const vazio = document.querySelector("#vazio");
+const mensagem = document.querySelector("#mensagem");
+
+function mostrarMensagem(texto) {
+    mensagem.textContent = texto;
+    mensagem.hidden = false;
+
+    setTimeout(function () {
+        mensagem.hidden = true;
+    }, 4000);
+}
 
 function criarCard(filme) {
     const card = document.createElement("article");
@@ -40,6 +50,15 @@ function mostrarFilmes() {
     } else {
         vazio.hidden = true;
     }
+}
+
+// Outras páginas voltam pra cá com um aviso no endereço (ex.: index.html?msg=cadastrado)
+const avisos = {
+    cadastrado: "Filme cadastrado com sucesso!"
+};
+const codigoAviso = new URLSearchParams(window.location.search).get("msg");
+if (avisos[codigoAviso]) {
+    mostrarMensagem(avisos[codigoAviso]);
 }
 
 mostrarFilmes();

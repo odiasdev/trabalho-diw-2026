@@ -24,11 +24,13 @@
     <main>
         <!-- Este mesmo formulário será usado para cadastro e edição -->
         <section>
-            <h2>Cadastrar filme</h2>
+            <h2 id="titulo-pagina">Cadastrar filme</h2>
 
             <p class="aviso">Os campos com * são obrigatórios.</p>
 
-            <form action="#" method="post" class="formulario">
+            <p id="feedback" class="alerta-erro" role="alert" hidden></p>
+
+            <form id="form-filme" action="#" method="post" class="formulario" novalidate>
                 <fieldset>
                     <legend>Informações do filme</legend>
 
@@ -99,7 +101,7 @@
                 </fieldset>
 
                 <div class="botoes">
-                    <button type="submit">Salvar</button>
+                    <button type="submit" id="botao-salvar">Salvar</button>
                     <button type="reset" class="secundario">Limpar</button>
                 </div>
             </form>
@@ -111,5 +113,6 @@
     </footer>
 
     <script src="../assets/js/dados.js"></script>
+    <script src="../assets/js/cadastro.js"></script>
 </body>
 </html>

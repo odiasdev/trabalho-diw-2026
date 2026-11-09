@@ -9,6 +9,7 @@ const formPesquisa = document.querySelector("#form-pesquisa");
 const campoPesquisa = document.querySelector("#pesquisa");
 const filtroGenero = document.querySelector("#filtro-genero");
 const filtroStatus = document.querySelector("#filtro-status");
+const seletorOrdem = document.querySelector("#ordenar");
 
 function mostrarMensagem(texto) {
     mensagem.textContent = texto;
@@ -74,9 +75,28 @@ function filtrarFilmes(filmes) {
     return resultado;
 }
 
+function ordenarFilmes(filmes) {
+    const criterio = seletorOrdem.value;
+
+    filmes.sort(function (a, b) {
+        if (criterio === "ano") {
+            return b.ano - a.ano; // mais novos primeiro
+        }
+        if (criterio === "nota") {
+            // filmes sem nota vão para o final
+            const notaA = a.nota === null ? -1 : a.nota;
+            const notaB = b.nota === null ? -1 : b.nota;
+            return notaB - notaA;
+        }
+        return a.titulo.localeCompare(b.titulo);
+    });
+
+    return filmes;
+}
+
 function mostrarFilmes() {
     const todos = carregarFilmes();
-    const filmes = filtrarFilmes(todos);
+    const filmes = ordenarFilmes(filtrarFilmes(todos));
 
     lista.innerHTML = "";
     for (const filme of filmes) {
@@ -100,6 +120,7 @@ function mostrarFilmes() {
 campoPesquisa.addEventListener("input", mostrarFilmes);
 filtroGenero.addEventListener("change", mostrarFilmes);
 filtroStatus.addEventListener("change", mostrarFilmes);
+seletorOrdem.addEventListener("change", mostrarFilmes);
 
 formPesquisa.addEventListener("submit", function (evento) {
     evento.preventDefault();

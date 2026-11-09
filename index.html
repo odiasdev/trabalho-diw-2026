@@ -22,6 +22,115 @@
     </nav>
 
     <main>
+        <section>
+            <h2>Pesquisar filmes</h2>
+
+            <form action="#" role="search">
+                <label for="pesquisa">Buscar por título ou diretor</label>
+                <input type="search" id="pesquisa" name="pesquisa" placeholder="Ex.: Interestelar">
+
+                <label for="filtro-genero">Gênero</label>
+                <select id="filtro-genero" name="filtro-genero">
+                    <option value="">Todos</option>
+                    <option value="acao">Ação</option>
+                    <option value="animacao">Animação</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="ficcao">Ficção científica</option>
+                    <option value="terror">Terror</option>
+                </select>
+
+                <label for="filtro-status">Status</label>
+                <select id="filtro-status" name="filtro-status">
+                    <option value="">Todos</option>
+                    <option value="assistido">Assistido</option>
+                    <option value="quero-ver">Quero ver</option>
+                </select>
+
+                <label for="ordenar">Ordenar por</label>
+                <select id="ordenar" name="ordenar">
+                    <option value="titulo">Título (A-Z)</option>
+                    <option value="ano">Ano de lançamento</option>
+                    <option value="nota">Maior nota</option>
+                </select>
+
+                <button type="submit">Pesquisar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Meus filmes</h2>
+
+            <!-- Dados de exemplo, serão gerados com JavaScript depois -->
+            <table>
+                <caption>Filmes cadastrados</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Título</th>
+                        <th scope="col">Diretor</th>
+                        <th scope="col">Gênero</th>
+                        <th scope="col">Ano</th>
+                        <th scope="col">Nota</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Interestelar</td>
+                        <td>Christopher Nolan</td>
+                        <td>Ficção científica</td>
+                        <td>2014</td>
+                        <td>9,5</td>
+                        <td>Assistido</td>
+                        <td>
+                            <a href="pages/detalhes.html">Ver detalhes</a>
+                            <a href="pages/cadastro.html">Editar</a>
+                            <button type="button">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cidade de Deus</td>
+                        <td>Fernando Meirelles</td>
+                        <td>Drama</td>
+                        <td>2002</td>
+                        <td>9,0</td>
+                        <td>Assistido</td>
+                        <td>
+                            <a href="pages/detalhes.html">Ver detalhes</a>
+                            <a href="pages/cadastro.html">Editar</a>
+                            <button type="button">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Toy Story</td>
+                        <td>John Lasseter</td>
+                        <td>Animação</td>
+                        <td>1995</td>
+                        <td>8,5</td>
+                        <td>Assistido</td>
+                        <td>
+                            <a href="pages/detalhes.html">Ver detalhes</a>
+                            <a href="pages/cadastro.html">Editar</a>
+                            <button type="button">Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>O Iluminado</td>
+                        <td>Stanley Kubrick</td>
+                        <td>Terror</td>
+                        <td>1980</td>
+                        <td>-</td>
+                        <td>Quero ver</td>
+                        <td>
+                            <a href="pages/detalhes.html">Ver detalhes</a>
+                            <a href="pages/cadastro.html">Editar</a>
+                            <button type="button">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <footer>

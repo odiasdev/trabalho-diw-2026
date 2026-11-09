@@ -103,3 +103,38 @@ button {
 button[type="reset"] {
     background-color: #777;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    margin-bottom: 8px;
+    text-align: left;
+    color: #666;
+}
+
+th,
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}
+
+td a {
+    margin-right: 8px;
+    color: #c0392b;
+}
+
+/* Deixa a tabela rolar sozinha em telas pequenas */
+@media (max-width: 700px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
